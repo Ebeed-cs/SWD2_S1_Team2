@@ -1,9 +1,9 @@
 import React, { use, useEffect, useState } from 'react'
 import './ProfileUpdate.css'
 import assets from '../../assets/assets'
-import{onAuthStateChanged} from 'firebas/auth';
+import { onAuthStateChanged } from "firebase/auth";
 import { auth } from '../../config/firebase';
-import { doc,getDoc}from 'firebas/firestore';
+import { doc, getDoc } from "firebase/firestore";
 const ProfileUpdate = () => {
     const navigate = useNavigate();
     const [image,setImage] = useState(false);
