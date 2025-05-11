@@ -5,10 +5,12 @@ const ChatBox = () => {
     return (
         <div className='chat-box'>
          <div className="chat-user">
-            <img src= {assets.proile_img} alt="" />
-            <p>Richard sanford <img className='dot' src={assets.green_dot} alt="" /></p>
-            <img src={assets.help_icon} className='help' alt="" />
+            <img src= {assets.profile_img} alt="" />
+            <p>Richard sanford <img className='dot' src={assets.green_dot} alt="online user" /></p>
+            <img src={assets.help_icon} className='help' alt="help icon" />
          </div>
+
+
          <div className="chat-msg"> 
            
             <div className="s-msg">
@@ -41,11 +43,11 @@ const ChatBox = () => {
 
          <div className="chat-input">
             <input type="text" placeholder='send a message' />
-            <input type="file" id='image' accept='image/png, image/jpeg hidden' />
+            <input type="file" id='image' accept='image/png, image/jpeg' hidden />
             <label htmlFor="image">
-                <img src={assets.gallery_icon} alt="" />
+                <img src={assets.gallery_icon} alt="insert image icon" />
             </label>
-            <img src={assets.send_button} alt="" />
+            <img src={assets.send_button} alt="telegram icon" />
          </div>
 
         </div>
