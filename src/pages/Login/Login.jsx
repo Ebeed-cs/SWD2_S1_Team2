@@ -56,9 +56,16 @@ const Login = () => {
                     <p>Agree to the terms of use & privacy policy. </p>
                 </div>
                 <div className="login-forgot">
-                    <p onClick={() => setCurrentState(currentState === "Sign Up" ? "Login" : "Sign Up")} >
-                        {currentState === "Sign Up" ? "Already have an account? Login" : "Don't have an account? Sign Up"}
-                    </p>
+                    {
+                        currentState === "Sign Up" ?
+                            <p className="login-toggle">
+                                Already have an accout? <span onClick={() => setCurrentState("Login")}>Login Here</span>
+                            </p>
+                            :
+                            <p className="login-toggle">
+                                Create An Account <span onClick={() => setCurrentState("Sign Up")}>Click here</span>
+                            </p>
+                    }
                 </div>
             </form>
         </div>
