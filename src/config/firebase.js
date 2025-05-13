@@ -1,67 +1,60 @@
-
 import { initializeApp } from "firebase/app";
-import {createUserWithEmailAndPassword,getAuth,signInWithEmailAndPassword}from 'firebase/auth';
-import{getFirestore,setDoc} from "firebase/firestore";
+import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut} from 'firebase/auth';
+import {getFirestore, setDoc, doc} from "firebase/firestore";
 import { toast } from 'react-toastify';
+
+
 const firebaseConfig = {
-  apiKey: "AIzaSyClWOnMrXYgXUw1-qkVEikLwRYJiKe6GsQ",
-  authDomain: "chat-app-gs-1248c.firebaseapp.com",
-  projectId: "chat-app-gs-1248c",
-  storageBucket: "chat-app-gs-1248c.firebasestorage.app",
-  messagingSenderId: "889992793547",
-  appId: "1:889992793547:web:4474018e6c2e4db1dafa4e"
+  apiKey: "AIzaSyAVxvvp8du3nE4VHR1HDhwSBOwXKIddvn0",
+  authDomain: "chat-app-gs-c6ed5.firebaseapp.com",
+  projectId: "chat-app-gs-c6ed5",
+  storageBucket: "chat-app-gs-c6ed5.firebasestorage.app",
+  messagingSenderId: "916865248163",
+  appId: "1:916865248163:web:ab9f5c287cd9e533f90816"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
- const auth= getAuth(app);
-const db =getFirestore(app);
-const signup =async(username,email,password)=>{
-    try{
-        const res = await createUserWithEmailAndPassword(auth,email,password);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+const signup = async(username, email, password) => {
+    try {
+        const res = await createUserWithEmailAndPassword(auth, email, password);
         const user = res.user;
-        await setDoc(doc(db,"users",user.uid),{
-            id:user.uid,
-            username:username.toLowercase(),
+        await setDoc(doc(db, "users", user.uid), {
+            id: user.uid,
+            username: username.toLowerCase(),
             email,
-            name:"",
-            avatar:"",
-            bio:"Hey,There i am using chat app",
-            lastSeen:Date.now()
-        } )
-        await setDoc(doc(db,"chats",user.uid),{
-            chatData:[]
-        })
-
-    } catch(error){
-
-        console.error(error)
-
-        toast.error(error.code.spilt('/')[1].spilt('-')).join(" ");
+            name: "",
+            avatar: "",
+            bio: "Hey,There i am using chat app",
+            lastSeen: Date.now()
+        });
+        await setDoc(doc(db, "chats", user.uid), {
+            chatsData: []
+        });
+    } catch(error) {
+        console.error(error);
+        toast.error(error.code.split('/')[1].split('-').join(" "));
     }
-    
-
 }
  
-const login = async(email,password)=>{
-    try{
-        await signInWithEmailAndPassword(auth,email,password);
-    }catch(error){
+const login = async(email, password) => {
+    try {
+        await signInWithEmailAndPassword(auth, email, password);
+    } catch(error) {
         console.error(error);
-        toast.error(error.code.spilt('/')[1].spilt('-')).join(" ");
-
+        toast.error(error.code.split('/')[1].split('-').join(" ")); // auth/email-already-use
     }
 }
 
-const logout = async()=>{
-    try{
-        await  signOut(auth)
-
-    } catch(error){
+const logout = async() => {
+    try {
+        await signOut(auth);
+    } catch(error) {
         console.error(error);
-        toast.error(error.code.spilt('/')[1].spilt('-')).join(" ");
-
+        toast.error(error.code.split('/')[1].split('-').join(" "));
     }
-
 }
-export {signup,login,logout,auth,db}
+
+export {signup, login, logout, auth, db}
