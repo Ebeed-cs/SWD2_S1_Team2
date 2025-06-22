@@ -5,8 +5,11 @@
 <h1 align="center">Real-Time Connect</h1>
 
 <p align="center">
-  🚀 A full-stack real-time chat app built as the final project of the Digital Egypt Pioneers Initiative (DEPI).  
-  I led a five-member team to design and develop this feature-rich communication platform using modern web technologies.
+  Real-Time Connect – A full-stack chat app and DEPI capstone project I led on a five-person team. <br />
+  Built with React, Firebase Auth & Firestore, and Cloudinary for real-time messaging and media.<br />
+  Features secure signup/login, profile editing with avatar uploads, and “last-seen” status.<br />
+  Supports live text/image chat, read/unread indicators, and 12-hour timestamps.<br />
+  Includes user search to add new contacts and dynamic chat list sorted by recent activity.
 </p>
 
 <div align="center">
@@ -38,6 +41,27 @@
 - **Deployment:** _Add deployment platform here_  
 
 ## 📸 Screenshots
+
+Here are some previews of the application in action:
+
+<p align="center">
+  <img src="https://github.com/Ebeed-cs/SWD2_S1_Team2/blob/main/loginPage.png?raw=true" alt="Login Page" width="600"/>
+  <br />
+  <em>🔐 Login Page</em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/Ebeed-cs/SWD2_S1_Team2/blob/main/profileUpdatePage.png?raw=true" alt="Profile Update Page" width="600"/>
+  <br />
+  <em>📝 Profile Update Page</em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/Ebeed-cs/SWD2_S1_Team2/blob/main/chatBoxPage.png?raw=true" alt="Chat Interface" width="600"/>
+  <br />
+  <em>💬 Real-Time Chat Interface</em>
+</p>
+
 
 
 
