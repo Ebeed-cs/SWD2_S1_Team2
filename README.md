@@ -65,9 +65,9 @@ Here are some previews of the application in action:
 
 
 
-## 🚀 Live Demo
+## 🚀 Demo
 
-> [Click here to try the app](https://youtu.be/47YKdZ4sPJY) 
+> [Click here to watch the demo](https://youtu.be/47YKdZ4sPJY) 
 
 ## 🧑‍💻 About the Project
 
